@@ -1,0 +1,29 @@
+{% extends 'base.html' %}   
+
+{% block title %}{{ super() }} login {%endblock%}
+
+{% block dash %}
+<form action="/criar_prato", method='POST'>
+    {{ form.csrf_token }}
+    <div class="form-group">
+        <label>Nome do prato:</label>
+        {{ form.nome_prato(_class="form-control", placeholder="Tá com fome né?")}}
+    </div>
+    <div class="form-group">
+        <label>Descrição do prato:</label>
+        {{ form.descricao_prato(_class="form-control", placeholder="Falta pouco, calma")}}
+    </div>
+    <div class="form-group">
+        <label>Preço:</label>
+        {{ form.preco(_class="form-control", placeholder="Falta pouco, calma")}}
+    </div>
+    <div class="form-group">
+        <label>Quantidade disponível:</label>
+        {{ form.quantidademax(_class="form-control", placeholder="Falta pouco, calma")}}
+    </div>
+    <button type="submit" class="btn btn-default"> HORA DE FICAR RICO! </button>
+    
+    
+</form>
+
+{% endblock %}

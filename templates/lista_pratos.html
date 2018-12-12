@@ -1,0 +1,30 @@
+{% extends 'base.html' %}   
+
+{% block title %}{{ super() }} lista de pratos {%endblock%}
+
+{% block dash %}
+
+<h1>Lista de pratos</h1>
+<table>
+    <tr>
+        <td>Nome:</td>
+        <td>Descrição:</td>
+        <td>Preço:</td>
+        <td>Quantidade disponível:</td>
+    </tr>
+    {% for prato in pratos %}
+    <tr>
+        <td>{{ prato.nome}}</td>
+        <td>{{ prato.descricao }}</td>
+        <td>{{ prato.preco}}</td>
+        <td>{{ prato.quantidade_disponivel}}</td>
+        <td><a href="/pedir/{{ prato.id }}">Pedir</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
+
+{% endblock %}

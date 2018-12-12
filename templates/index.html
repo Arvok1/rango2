@@ -1,0 +1,23 @@
+{% extends 'base.html' %}   
+
+{% block title %}{{ super() }} homepage {%endblock%}
+{% block dash %}
+<main role="main" class="container">
+
+    <div class="starter-template">
+      <h1>VEM QUE TEM</h1>
+      <p class="lead">Comida é aqui!</p>
+      <p>“/” e “/home” – Página inicial
+        “/registrar” – Registro de usuários
+        “/login” – Login de usuário
+        “/logout” – Logout de usuário
+        “/criar_prato” – Criação de um prato – É necessário estar autenticado e ser fornecedor
+        “/lista_pratos” – Mostra todos os pratos disponíveis e a opção de pedir 
+        “/pedir” – Só é acessível se pedido pela lista de pratos – É necessário estar autenticado e ser cliente
+        “/pedidos” – Mostra os pedidos criados se o usuário for cliente e os pedidos feitos se o usuário for fornecedor
+      </p>
+    </div>
+
+  </main><!-- /.container -->
+
+{% endblock %}

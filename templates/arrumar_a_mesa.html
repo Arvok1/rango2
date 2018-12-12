@@ -1,0 +1,35 @@
+{% extends 'base.html' %}   
+
+{% block title %}{{ super() }} registro cliente {%endblock%}
+
+{% block dash %}
+<form action="/registrar" method='POST'>
+    {{ form.csrf_token }}
+    <div class="form-group">
+        <label>Nome:</label>
+        {{ form.nome(_class="form-control", placeholder="Bota seu nome aqui parceiro")}}
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        {{ form.email(_class="form-control", placeholder="Agora o email")}}
+    </div>
+    <div class="form-group">
+        <label>cpf:</label>
+        {{ form.cpf(_class="form-control", placeholder="CPF")}}
+    </div>
+    <div class="form-group">
+        <label>Senha:</label>
+        {{ form.senha(_class="form-control", placeholder="Esse aqui você esconde")}}
+    </div>
+    {% for subfield in form.role %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+    <button type="submit" class="btn btn-default"> HORA DO RANGO! </button>
+    
+    
+</form>
+
+{% endblock %}
